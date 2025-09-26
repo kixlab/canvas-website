@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/bulma-table.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CANVAS Scores — Replication & Modification</title>
+    <style>
+      /* Custom styles for Bulma table enhancements */
+      .hero.is-primary {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      }
+
+      .table.is-bordered th.is-current-sort,
+      .table.is-bordered th.is-sortable:hover {
+        background-color: #f5f5f5;
+        border-color: #dbdbdb;
+      }
+
+      .table tbody tr:hover {
+        background-color: #f8f9fa;
+      }
+
+      .table tbody tr:nth-child(odd) {
+        background-color: #fafafa;
+      }
+
+      .table tbody tr:nth-child(odd):hover {
+        background-color: #f0f8ff;
+      }
+
+      .model-cell {
+        font-weight: 600;
+        background-color: #f8f9fa !important;
+      }
+
+      .score-cell {
+        font-family:
+          "JetBrains Mono", "Fira Code", "Monaco", "Consolas", monospace;
+        font-size: 0.9em;
+      }
+
+      .best-score {
+        font-weight: 700;
+        color: #2563eb;
+      }
+
+      .highlight-cell {
+        background-color: #e6f0ff !important;
+        font-weight: 600;
+        position: relative;
+      }
+
+      .highlight-cell::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: #2563eb;
+      }
+
+      .section {
+        padding: 2rem 1.5rem;
+      }
+
+      .table-wrapper {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .notification {
+        border-left: 4px solid #2563eb;
+      }
+
+      /* Mobile card view enhancements */
+      @media screen and (max-width: 768px) {
+        .table-wrapper.has-mobile-cards
+          tr:not(.detail):not(.is-empty):not(.table-footer)
+          td:before {
+          font-weight: 600;
+          color: #363636;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title is-2 has-text-centered">
+            <i class="fas fa-chart-line mr-3"></i>CANVAS Scores
+          </h1>
+          <p class="subtitle is-4 has-text-centered has-text-light">
+            Design Replication & Modification Task Performance
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="table-wrapper has-mobile-cards">
+          <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+            <thead>
+              <tr>
+                <th rowspan="2" class="has-text-centered">
+                  <span class="icon-text">
+                    <span class="icon">
+                      <i class="fas fa-robot"></i>
+                    </span>
+                    <span>Model</span>
+                  </span>
+                </th>
+                <th
+                  colspan="4"
+                  class="has-text-centered has-background-primary has-text-white"
+                >
+                  <span class="icon-text">
+                    <span class="icon">
+                      <i class="fas fa-copy"></i>
+                    </span>
+                    <span>Replication</span>
+                  </span>
+                </th>
+                <th
+                  colspan="4"
+                  class="has-text-centered has-background-primary has-text-white"
+                >
+                  <span class="icon-text">
+                    <span class="icon">
+                      <i class="fas fa-edit"></i>
+                    </span>
+                    <span>Modification</span>
+                  </span>
+                </th>
+              </tr>
+              <tr>
+                <th class="has-text-centered">SSIM</th>
+                <th class="has-text-centered">Saliency</th>
+                <th class="has-text-centered">BLIP</th>
+                <th class="has-text-centered">Comp. Wise</th>
+                <th class="has-text-centered">SSIM</th>
+                <th class="has-text-centered">Saliency</th>
+                <th class="has-text-centered">BLIP</th>
+                <th class="has-text-centered">Comp. Wise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="model-cell" data-label="Model">GPT-4o</td>
+                <td class="score-cell" data-label="Replication SSIM">
+                  0.739 (±0.172)
+                </td>
+                <td class="score-cell" data-label="Replication Saliency">
+                  0.478 (±0.136)
+                </td>
+                <td class="score-cell" data-label="Replication BLIP">
+                  0.495 (±0.250)
+                </td>
+                <td class="score-cell" data-label="Replication Comp. Wise">
+                  0.671 (±0.087)
+                </td>
+                <td class="score-cell" data-label="Modification SSIM">
+                  0.843 (Δ0.136)
+                </td>
+                <td class="score-cell" data-label="Modification Saliency">
+                  0.845 (−Δ0.009)
+                </td>
+                <td class="score-cell" data-label="Modification BLIP">
+                  0.740 (−Δ0.021)
+                </td>
+                <td class="score-cell" data-label="Modification Comp. Wise">
+                  0.943 (Δ0.015)
+                </td>
+              </tr>
+              <tr>
+                <td class="model-cell" data-label="Model">GPT-4.1</td>
+                <td class="score-cell" data-label="Replication SSIM">
+                  0.767 (±0.129)
+                </td>
+                <td class="score-cell" data-label="Replication Saliency">
+                  0.612 (±0.137)
+                </td>
+                <td
+                  class="score-cell highlight-cell best-score"
+                  data-label="Replication BLIP"
+                >
+                  0.655 (±0.251)
+                </td>
+                <td
+                  class="score-cell highlight-cell best-score"
+                  data-label="Replication Comp. Wise"
+                >
+                  0.716 (±0.075)
+                </td>
+                <td
+                  class="score-cell highlight-cell best-score"
+                  data-label="Modification SSIM"
+                >
+                  0.890 (Δ0.183)
+                </td>
+                <td
+                  class="score-cell highlight-cell best-score"
+                  data-label="Modification Saliency"
+                >
+                  0.861 (Δ0.007)
+                </td>
+                <td
+                  class="score-cell highlight-cell best-score"
+                  data-label="Modification BLIP"
+                >
+                  0.806 (Δ0.044)
+                </td>
+                <td
+                  class="score-cell highlight-cell best-score"
+                  data-label="Modification Comp. Wise"
+                >
+                  0.951 (Δ0.024)
+                </td>
+              </tr>
+              <tr>
+                <td class="model-cell" data-label="Model">Claude-3.5-Sonnet</td>
+                <td class="score-cell" data-label="Replication SSIM">
+                  0.725 (±0.180)
+                </td>
+                <td class="score-cell" data-label="Replication Saliency">
+                  0.483 (±0.151)
+                </td>
+                <td class="score-cell" data-label="Replication BLIP">
+                  0.518 (±0.272)
+                </td>
+                <td class="score-cell" data-label="Replication Comp. Wise">
+                  0.666 (±0.089)
+                </td>
+                <td class="score-cell" data-label="Modification SSIM">
+                  0.816 (Δ0.109)
+                </td>
+                <td class="score-cell" data-label="Modification Saliency">
+                  0.858 (Δ0.004)
+                </td>
+                <td class="score-cell" data-label="Modification BLIP">
+                  0.775 (Δ0.013)
+                </td>
+                <td class="score-cell" data-label="Modification Comp. Wise">
+                  0.946 (Δ0.018)
+                </td>
+              </tr>
+              <tr>
+                <td class="model-cell" data-label="Model">Gemini-2.5-Flash</td>
+                <td class="score-cell" data-label="Replication SSIM">
+                  0.736 (±0.184)
+                </td>
+                <td class="score-cell" data-label="Replication Saliency">
+                  0.619 (±0.149)
+                </td>
+                <td class="score-cell" data-label="Replication BLIP">
+                  0.571 (±0.270)
+                </td>
+                <td class="score-cell" data-label="Replication Comp. Wise">
+                  0.702 (±0.100)
+                </td>
+                <td class="score-cell" data-label="Modification SSIM">
+                  0.874 (Δ0.167)
+                </td>
+                <td class="score-cell" data-label="Modification Saliency">
+                  0.857 (Δ0.003)
+                </td>
+                <td class="score-cell" data-label="Modification BLIP">
+                  0.784 (Δ0.023)
+                </td>
+                <td class="score-cell" data-label="Modification Comp. Wise">
+                  0.948 (Δ0.020)
+                </td>
+              </tr>
+              <tr>
+                <td class="model-cell" data-label="Model">Gemini-2.5-Pro</td>
+                <td
+                  class="score-cell highlight-cell best-score"
+                  data-label="Replication SSIM"
+                >
+                  0.774 (±0.117)
+                </td>
+                <td
+                  class="score-cell highlight-cell best-score"
+                  data-label="Replication Saliency"
+                >
+                  0.630 (±0.162)
+                </td>
+                <td class="score-cell" data-label="Replication BLIP">
+                  0.620 (±0.273)
+                </td>
+                <td class="score-cell" data-label="Replication Comp. Wise">
+                  0.694 (±0.094)
+                </td>
+                <td class="score-cell" data-label="Modification SSIM">
+                  0.867 (Δ0.150)
+                </td>
+                <td class="score-cell" data-label="Modification Saliency">
+                  0.851 (−Δ0.003)
+                </td>
+                <td class="score-cell" data-label="Modification BLIP">
+                  0.804 (Δ0.043)
+                </td>
+                <td class="score-cell" data-label="Modification Comp. Wise">
+                  0.935 (Δ0.007)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="notification is-info is-light mt-5">
+          <div class="content">
+            <p class="has-text-weight-semibold">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fas fa-info-circle"></i>
+                </span>
+                <span>Legend</span>
+              </span>
+            </p>
+            <ul class="mt-2">
+              <li><strong>±</strong> indicates the standard deviation</li>
+              <li>
+                <strong>Δ</strong> indicates the average score increase from the
+                base design
+              </li>
+              <li>
+                <span class="best-score">Bold values</span> represent the best
+                performance in each column
+              </li>
+              <li>
+                <span class="highlight-cell">Highlighted cells</span> show
+                significant performance improvements
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

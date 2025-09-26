@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="CANVAS is the first benchmark to evaluate vision-language models' ability to perform tool-based UI generation in interactive, multi-turn design environments.">
+  <meta name="keywords" content="CANVAS, Vision-Language Models, UI Design, Benchmark, Tool-based Generation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>CANVAS: A Benchmark for Vision-Language Models on Tool-Based UI Design</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -26,8 +26,8 @@
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  
+  
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -36,9 +36,9 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
+  
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/quantitative-results.js"></script>
 </head>
 <body>
 
@@ -52,31 +52,12 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://www.kixlab.org/">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
       </a>
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
     </div>
 
   </div>
@@ -88,69 +69,47 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-2 publication-title">CANVAS: A Benchmark for Vision-Language Models on Tool-Based UI Design</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="mailto:daeheon.jeong@kaist.ac.kr">Daeheon Jeong</a><sup>1*</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="mailto:byunhwan8832@korea.ac.kr">Seoyeon Byun</a><sup>2*</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="mailto:kihoon.son@kaist.ac.kr">Kihoon Son</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              <a href="mailto:dhkim16@yonsei.ac.kr">Dae Hyun Kim</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              <a href="mailto:juhokim@kaist.ac.kr">Juho Kim</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>KAIST, </span>
+            <span class="author-block"><sup>2</sup>Korea University, </span>
+            <span class="author-block"><sup>3</sup>Yonsei University</span>
+            <br>
+            <span class="author-block is-size-6"><sup>*</sup>Equal contribution</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
+              <!-- arXiv Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/abs/TBD"
+                   class="external-link button is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://github.com/canvas-benchmark"
+                   class="external-link button is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
@@ -159,14 +118,14 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://huggingface.co/datasets/canvas-benchmark"
+                   class="external-link button is-rounded is-dark">
                   <span class="icon">
-                      <i class="far fa-images"></i>
+                    <i class="fa fa-database" aria-hidden="true"></i>
                   </span>
-                  <span>Data</span>
-                  </a>
-            </div>
+                  <span>Dataset</span>
+                </a>
+              </span>
 
           </div>
         </div>
@@ -178,307 +137,466 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
+      <div class="has-text-centered">
+        <video 
+          class="intro-video-desktop"
+          src="./static/samples/intro-video.mp4" 
+          autoplay 
+          muted 
+          playsinline 
+          style="width: 100%; height: auto; border-radius: 10px; cursor: pointer;"
+          onclick="this.play()"
+          onended="this.currentTime = this.duration - 0.1; this.pause()"
+          title="Click to replay">
+        </video>
+        <video 
+          class="intro-video-mobile"
+          src="./static/samples/intro-video-mobile.mp4" 
+          autoplay 
+          muted 
+          playsinline 
+          style="width: 100%; height: auto; border-radius: 10px; cursor: pointer;"
+          onclick="this.play()"
+          onended="this.currentTime = this.duration - 0.1; this.pause()"
+          title="Click to replay">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">Canvas</span> evaluates vision-language models' ability to design UIs through tool invocation.
+        </h2>
+      </div>
     </div>
   </div>
 </section>
 
-
-<section class="hero is-light is-small">
+<section class="hero is-light is-small is-fullwidth">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
+      <div class="has-text-centered">
+        <h2 class="title is-3">Qualitative Results</h2>
+      </div>
+      
+      <!-- Task Type Buttons -->
+      <div class="has-text-centered" style="margin: 2rem 0;">
+        <div class="buttons is-centered">
+          <button class="button task-button is-primary" data-task="replication">Replication</button>
+          <button class="button task-button" data-task="attribute-update">Attribute Update</button>
+          <button class="button task-button" data-task="component-insertion">Component Insertion</button>
+          <button class="button task-button" data-task="mode-change">Mode Change</button>
+          <button id="replay-replication" class="replay-button" title="모두 다시 재생">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+            </svg>
+          </button>
         </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
+      </div>
+      
+      <!-- Replication Carousel -->
+      <div id="replication-carousel" class="task-carousel" style="display: block;">
+        <div class="carousel-wrapper">
+          <div id="results-carousel" class="carousel results-carousel">
+          </div>
         </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
+      </div>
+      
+      <!-- Attribute Update Carousel -->
+      <div id="attribute-update-carousel" class="task-carousel" style="display: none;">
+        <div class="carousel-wrapper">
+          <div id="attribute-update-results-carousel" class="carousel results-carousel">
+          </div>
         </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
+      </div>
+      
+      <!-- Component Insertion Carousel -->
+      <div id="component-insertion-carousel" class="task-carousel" style="display: none;">
+        <div class="carousel-wrapper">
+          <div id="component-insertion-results-carousel" class="carousel results-carousel">
+          </div>
         </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
+      </div>
+      
+      <!-- Mode Change Carousel -->
+      <div id="mode-change-carousel" class="task-carousel" style="display: none;">
+        <div class="carousel-wrapper">
+          <div id="mode-change-results-carousel" class="carousel results-carousel">
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-10">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            User interface (UI) design is an iterative process in which designers progressively refine their work with design software such as Figma or Sketch. Recent advances in vision–language models (VLMs) with tool invocation suggest these models can operate the design software to edit a UI design through iteration.
+            Understanding and enhancing this capacity is important, as it highlights VLMs' potential to collaborate with designers within conventional software. However, as no existing benchmark evaluates the tool-based design performance, the capacity remains unknown.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            To address this, we introduce <span class="dnerf">Canvas</span>, a benchmark for VLMs on tool-based user interface design. Our benchmark contains 598 tool-based design tasks paired with ground-truth references sampled from 3.3K mobile UI designs across 30 function-based categories.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            In each task, a VLM updates the design step-by-step, through context-based tool invocations (e.g., create a rectangle as a button background), linked to design software. Specifically, <span class="dnerf">Canvas</span> incorporates two task types: (i) design replication evaluates the ability to reproduce a whole UI screen; (ii) design modification evaluates the ability to modify a specific part of an existing screen.
+            Results suggest that leading models exhibit more strategic tool invocations, improving design quality. Furthermore, we identify common error patterns models exhibit, guiding future work in enhancing tool-based design capabilities.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="has-text-centered">
+        <h2 class="title is-3">Benchmark Overview</h2>
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <div class="box">
+              <h3 class="title is-4">Dataset</h3>
+              <div class="content has-text-justified">
+                <p>
+                  <span class="dnerf">Canvas</span> contains <strong>598 design tasks</strong> from <strong>3,327 mobile UI designs across 30 categories</strong>. Each design includes an image and a JSON file representing the Figma node structure. This file organizes components (e.g., vector, text, rectangle) in a hierarchical tree with attributes like position, size, and color.
+                </p>
+                <div class="has-text-centered" style="margin: 2rem 0;">
+                  <img src="./static/images/data-characteristics.png" alt="Data Characteristics" style="width: 100%; max-width: 800px; height: auto;">
+                </div>
+                <p>
+                  <span class="figure-tag">A</span>Frequency of the five most frequent UI design types, with other categories grouped. <span class="figure-tag">B</span>The distribution of node tree depth is similar across the replication and modification sets with a Gaussian-like pattern. <span class="figure-tag">C</span>The node count distribution is also similar across both sets. <span class="figure-tag">D</span>The skewed frequency of node types per design indicates common patterns in component usage.
+                </p>
+              </div>
+            </div>
+            <div class="box">
+              <h3 class="title is-4">Task Design</h3>
+              <div class="content has-text-justified">
+                <p>
+                  To reflect real-world user scenarios, <span class="dnerf">Canvas</span> consists of two types of user interface (UI) design tasks: <span class="figure-tag">A</span><strong>Design Replication</strong> and <span class="figure-tag">B</span><strong>Design Modification</strong>.
+                <div class="has-text-centered" style="margin: 2rem 0;">
+                  <img src="./static/images/tasks-overview.png" alt="Tasks Overview" style="width: 100%; max-width: 800px; height: auto;">
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <h3 class="title is-4">Evaluation Metrics</h3>
+              <div class="content has-text-justified">
+                <p>
+                  Our evaluation framework measures both perceptual and semantic alignment between generated and reference designs, based on the model of human visual processing. We assess similarity at three hierarchical levels:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Feature-level (SSIM):</strong> Compares low-level features like size and shape using the Structural Similarity Index Measure.
+                  </li>
+                  <li>
+                    <strong>Pattern-level (Saliency Similarity):</strong> Compares visual saliency maps to see how well patterns that guide human focus are replicated.
+                  </li>
+                  <li>
+                    <strong>Object-level (BLIP Caption Similarity):</strong> Generates captions for designs and compares their semantic meaning.
+                  </li>
+                </ul>
+                <p>
+                  Additionally, <strong>Component-wise Similarity</strong> evaluates the accuracy of individual UI components by matching them between designs and assessing four key attributes: component match rates, position, text, and color.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container">
 
+    <!-- Key Results. -->
     <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
+      <div class="column is-10">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">Key Results</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            Our evaluation of five state-of-the-art VLMs reveals important insights about tool-based UI design capabilities.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
+          <div class="box">
+            <h4 class="title is-10">Highlights</h4>
+            <ul>
+              <li><strong>Replication Task:</strong> Gemini-2.5-Pro achieved highest SSIM (0.774) and Saliency (0.630)</li>
+              <li><strong>Modification Task:</strong> GPT-4.1 led across all metrics (SSIM: 0.890, Saliency: 0.861)</li>
+            </ul>
           </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+          
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-5">Replication Strategy</h4>
+                <p>High-scoring models invoke a wider range of tools across more turns, often reusing components strategically (e.g., copy and propagate) rather than recreating them sequentially.</p>
+              </div>
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-5">Modification Precision</h4>
+                <p>Small inaccuracies in edits propagate unevenly across metrics, making precision more important than diversity. Models with higher tool precision achieve better modification scores.</p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-5">Human Alignment</h4>
+                <p>Our evaluation metrics (saliency, BLIP, component similarity) strongly correlate with human judgments of design quality, confirming that they capture expert preferences, achieving 75% prediction accuracy for human pairwise judgments.</p>
+              </div>
+            </div>
           </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
         </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
       </div>
     </div>
-    <!--/ Animation. -->
+    <!--/ Key Results. -->
 
-
-    <!-- Concurrent Work. -->
+    <!-- Quantitative Results. -->
     <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
+      <div class="column is-10">
+        <div class="content">
+          <h2 class="title is-3">Quantitative Results</h2>
           <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
+            Performance comparison of five state-of-the-art vision-language models on CANVAS benchmark tasks.
           </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
+          
+          <div class="box">
+            <!-- Task Type Buttons -->
+            <div class="has-text-centered" style="margin-bottom: 1.5rem;">
+              <div class="buttons is-centered">
+                <button class="button quant-task-button is-primary" data-task="replication">Replication</button>
+                <button class="button quant-task-button" data-task="modification">Modification</button>
+                <button class="legend-tooltip" data-tooltip="± indicates the standard deviation; Δ indicates the average score increase from the base design; Bold values represent the best performance in each column; Highlighted cells show significant performance improvements">
+                  <span class="icon">
+                    <i class="fas fa-info-circle"></i>
+                  </span>
+                  <div class="tooltip-content">
+                    <div class="tooltip-arrow"></div>
+                    <div class="tooltip-text">
+                      ±: standard deviation<br>
+                      Δ: avg. score increase from the base<br>
+                      <span class="highlight-cell">Highlighted cells</span>: the best performance in each column
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Replication Table -->
+            <div id="replication-table" class="table-container" style="display: block;">
+              <div class="table-wrapper has-mobile-cards">
+                <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th class="has-text-centered">
+                        <span class="icon-text">
+                          <span class="icon">
+                            <i class="fas fa-robot"></i>
+                          </span>
+                          <span>Model</span>
+                        </span>
+                      </th>
+                      <th class="has-text-centered">SSIM</th>
+                      <th class="has-text-centered">Saliency</th>
+                      <th class="has-text-centered">BLIP</th>
+                      <th class="has-text-centered">Comp. Wise</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="model-cell" data-label="Model">GPT-4o</td>
+                      <td class="score-cell" data-label="SSIM">0.739 (±0.172)</td>
+                      <td class="score-cell" data-label="Saliency">0.478 (±0.136)</td>
+                      <td class="score-cell" data-label="BLIP">0.495 (±0.250)</td>
+                      <td class="score-cell" data-label="Comp. Wise">0.671 (±0.087)</td>
+                    </tr>
+                    <tr>
+                      <td class="model-cell" data-label="Model">GPT-4.1</td>
+                      <td class="score-cell" data-label="SSIM">0.767 (±0.129)</td>
+                      <td class="score-cell" data-label="Saliency">0.612 (±0.137)</td>
+                      <td class="score-cell highlight-cell best-score" data-label="BLIP">0.655 (±0.251)</td>
+                      <td class="score-cell highlight-cell best-score" data-label="Comp. Wise">0.716 (±0.075)</td>
+                    </tr>
+                    <tr>
+                      <td class="model-cell" data-label="Model">Claude-3.5-Sonnet</td>
+                      <td class="score-cell" data-label="SSIM">0.725 (±0.180)</td>
+                      <td class="score-cell" data-label="Saliency">0.483 (±0.151)</td>
+                      <td class="score-cell" data-label="BLIP">0.518 (±0.272)</td>
+                      <td class="score-cell" data-label="Comp. Wise">0.666 (±0.089)</td>
+                    </tr>
+                    <tr>
+                      <td class="model-cell" data-label="Model">Gemini-2.5-Flash</td>
+                      <td class="score-cell" data-label="SSIM">0.736 (±0.184)</td>
+                      <td class="score-cell" data-label="Saliency">0.619 (±0.149)</td>
+                      <td class="score-cell" data-label="BLIP">0.571 (±0.270)</td>
+                      <td class="score-cell" data-label="Comp. Wise">0.702 (±0.100)</td>
+                    </tr>
+                    <tr>
+                      <td class="model-cell" data-label="Model">Gemini-2.5-Pro</td>
+                      <td class="score-cell highlight-cell best-score" data-label="SSIM">0.774 (±0.117)</td>
+                      <td class="score-cell highlight-cell best-score" data-label="Saliency">0.630 (±0.162)</td>
+                      <td class="score-cell" data-label="BLIP">0.620 (±0.273)</td>
+                      <td class="score-cell" data-label="Comp. Wise">0.694 (±0.094)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <!-- Modification Table -->
+            <div id="modification-table" class="table-container" style="display: none;">
+              <div class="table-wrapper has-mobile-cards">
+                <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th class="has-text-centered">
+                        <span class="icon-text">
+                          <span class="icon">
+                            <i class="fas fa-robot"></i>
+                          </span>
+                          <span>Model</span>
+                        </span>
+                      </th>
+                      <th class="has-text-centered">SSIM</th>
+                      <th class="has-text-centered">Saliency</th>
+                      <th class="has-text-centered">BLIP</th>
+                      <th class="has-text-centered">Comp. Wise</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="model-cell" data-label="Model">GPT-4o</td>
+                      <td class="score-cell" data-label="SSIM">0.843 (Δ0.136)</td>
+                      <td class="score-cell" data-label="Saliency">0.845 (−Δ0.009)</td>
+                      <td class="score-cell" data-label="BLIP">0.740 (−Δ0.021)</td>
+                      <td class="score-cell" data-label="Comp. Wise">0.943 (Δ0.015)</td>
+                    </tr>
+                    <tr>
+                      <td class="model-cell" data-label="Model">GPT-4.1</td>
+                      <td class="score-cell highlight-cell best-score" data-label="SSIM">0.890 (Δ0.183)</td>
+                      <td class="score-cell highlight-cell best-score" data-label="Saliency">0.861 (Δ0.007)</td>
+                      <td class="score-cell highlight-cell best-score" data-label="BLIP">0.806 (Δ0.044)</td>
+                      <td class="score-cell highlight-cell best-score" data-label="Comp. Wise">0.951 (Δ0.024)</td>
+                    </tr>
+                    <tr>
+                      <td class="model-cell" data-label="Model">Claude-3.5-Sonnet</td>
+                      <td class="score-cell" data-label="SSIM">0.816 (Δ0.109)</td>
+                      <td class="score-cell" data-label="Saliency">0.858 (Δ0.004)</td>
+                      <td class="score-cell" data-label="BLIP">0.775 (Δ0.013)</td>
+                      <td class="score-cell" data-label="Comp. Wise">0.946 (Δ0.018)</td>
+                    </tr>
+                    <tr>
+                      <td class="model-cell" data-label="Model">Gemini-2.5-Flash</td>
+                      <td class="score-cell" data-label="SSIM">0.874 (Δ0.167)</td>
+                      <td class="score-cell" data-label="Saliency">0.857 (Δ0.003)</td>
+                      <td class="score-cell" data-label="BLIP">0.784 (Δ0.023)</td>
+                      <td class="score-cell" data-label="Comp. Wise">0.948 (Δ0.020)</td>
+                    </tr>
+                    <tr>
+                      <td class="model-cell" data-label="Model">Gemini-2.5-Pro</td>
+                      <td class="score-cell" data-label="SSIM">0.867 (Δ0.150)</td>
+                      <td class="score-cell" data-label="Saliency">0.851 (−Δ0.003)</td>
+                      <td class="score-cell" data-label="BLIP">0.804 (Δ0.043)</td>
+                      <td class="score-cell" data-label="Comp. Wise">0.935 (Δ0.007)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
+    <!--/ Quantitative Results. -->
+
+    <!-- Error Analysis. -->
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h2 class="title is-3">Error Analysis</h2>
+        <div class="content">
+          <p>
+            We identify common failure patterns in current VLMs for tool-based design tasks.
+          </p>
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <figure class="image" style="margin: 0;">
+                  <img src="./static/images/error-type-position.png" alt="Error Type: Position" style="width: 100%; height: auto;">
+                </figure>
+                <div style="padding: 1rem;">
+                  <h4 class="title is-5">Geometric Operations</h4>
+                  <p>Models struggle with geometric properties, producing the wrong count of markers, irregular path directions, and inconsistent component layouts.</p>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box">
+                <figure class="image" style="margin: 0;">
+                  <img src="./static/images/error-type-layout.png" alt="Error Type: Layout" style="width: 100%; height: auto;">
+                </figure>
+                <div style="padding: 1rem;">
+                  <h4 class="title is-5">Layout Operations</h4>
+                  <p>Models often misinterpret auto-layout rules, leading to broken alignment between interface elements or pushing components beyond the visible screen.</p>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box">
+                <figure class="image" style="margin: 0;">
+                  <img src="./static/images/error-type-text.png" alt="Error Type: Text" style="width: 100%; height: auto;">
+                </figure>
+                <div style="padding: 1rem;">
+                  <h4 class="title is-5">Text Operations</h4>
+                  <p>Models frequently fail to size text components correctly, causing labels to overflow their frames and disrupt both alignment and overall readability.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Error Analysis. -->
+
+
+
 
   </div>
 </section>
 
 
 <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{jeong2025canvas,
+  author       = {Jeong, Daeheon and Byun, Seoyeon and Son, Kihoon and Kim, Dae Hyun and Kim, Juho},
+  title        = {CANVAS: A Benchmark for Vision-Language Models on Tool-Based User Interface Design},
+  year         = {2025},
+  month        = jul,
+  howpublished = {Preprint},
 }</code></pre>
+      </div>
+    </div>
   </div>
 </section>
 
 
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
+            The source code of this webpage is based on <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license"
                                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
           </p>
         </div>
       </div>
