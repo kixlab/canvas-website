@@ -370,6 +370,19 @@ $(document).ready(function () {
         }
         var offset = -this.index * this.width;
         this.track.style.transform = "translate3d(" + offset + "px,0,0)";
+        
+        var currentSlide = this.track.children[this.index];
+        if (currentSlide) {
+          var videos = currentSlide.querySelectorAll("video");
+          videos.forEach(function (video) {
+            try {
+              video.currentTime = 0;
+              video.muted = true;
+              video.play().catch(function (e) {});
+            } catch (e) {}
+          });
+        }
+        
         autoPlayVisibleVideos();
       },
       next: function () {
