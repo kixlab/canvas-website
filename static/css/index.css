@@ -352,6 +352,52 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.table-container {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-container .table-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-container .table-wrapper table {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Ensure both tables have identical spacing */
+#replication-table,
+#modification-table {
+  min-height: 200px;
+  margin-bottom: 0.5rem;
+}
+
+#replication-table .table-wrapper,
+#modification-table .table-wrapper {
+  height: 100%;
+}
+
+/* Make table columns equal width */
+.table-container table {
+  table-layout: fixed;
+}
+
+.table-container table th,
+.table-container table td {
+  width: 20%;
+  text-align: center;
+}
+
+.table-container table th:first-child,
+.table-container table td:first-child {
+  width: 20%;
+  text-align: left;
+}
+
 @media screen and (max-width: 768px) {
   .table-wrapper {
     overflow-x: auto;
