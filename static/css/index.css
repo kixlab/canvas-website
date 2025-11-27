@@ -145,35 +145,46 @@ body {
 }
 
 .replay-button {
-  background: #3273dc;
-  border: none;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  display: flex;
+  background: #363636;
+  border: 1px solid #363636;
+  border-radius: 290486px;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: white;
+  color: white !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   margin-bottom: 0.5rem;
+  height: 2.5em;
 }
 
 .replay-button:hover {
-  background: #2366d1;
+  background: #292929;
+  border-color: #292929;
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: white !important;
 }
 
 .replay-button:active {
   transform: scale(0.95);
+  color: white !important;
+}
+
+.replay-button .icon {
+  margin-right: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .replay-button svg {
   transition: transform 0.3s ease;
   transform: rotate(0deg);
+  display: block;
 }
 
 .replay-button:hover svg {
@@ -205,6 +216,16 @@ body {
 
 .slide-group.layout-4 {
   grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .slide-group.layout-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .slide-group.layout-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .slide-group img,
